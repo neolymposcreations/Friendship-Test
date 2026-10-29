@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f4ef">
+<title>Ozan'ı Ne Kadar Tanıyorsun?</title>
+<style>
+:root{--bg:#f7f4ef;--card:#fffdf9;--ink:#24221f;--muted:#77716a;--accent:#355c4b;--accent2:#e7eee8;--line:#e8e1d8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;display:grid;place-items:center;padding:22px}
+.app{width:min(100%,560px)}.top{display:flex;align-items:center;justify-content:space-between;margin:0 2px 18px;color:var(--muted);font-size:13px;letter-spacing:.04em}.mark{font-weight:800;color:var(--accent);letter-spacing:.12em}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,6vw,42px);box-shadow:0 18px 55px #3428190b}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}h1{font-size:clamp(30px,7vw,44px);line-height:1.08;letter-spacing:-.045em;margin:0 0 14px}p{line-height:1.6;color:var(--muted);margin:0 0 22px}.input{width:100%;border:1px solid var(--line);border-radius:13px;padding:15px 16px;font:inherit;background:white;margin:0 0 14px;outline:none}.input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #355c4b18}.btn{border:0;border-radius:13px;background:var(--accent);color:white;padding:15px 20px;font:inherit;font-weight:750;cursor:pointer;width:100%;transition:transform .15s,opacity .15s}.btn:hover{opacity:.93}.btn:active{transform:scale(.99)}.progress-row{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}.track{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:28px}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}.question{font-size:clamp(22px,5vw,29px);line-height:1.25;letter-spacing:-.025em;margin:0 0 22px}.options{display:grid;gap:10px;margin-bottom:22px}.option{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:15px;cursor:pointer;font:inherit;color:var(--ink)}.option .letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#f3f0eb;color:#635e57;font-size:13px;font-weight:800}.option.selected{border-color:var(--accent);background:var(--accent2)}.option.selected .letter{background:var(--accent);color:#fff}.option:focus-visible,.btn:focus-visible{outline:3px solid #8fb3a0;outline-offset:3px}.nav{display:flex;gap:10px}.btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}.nav .btn{flex:1}.score{font-size:68px;line-height:1;font-weight:850;letter-spacing:-.06em;color:var(--accent);margin:12px 0}.pill{display:inline-block;background:var(--accent2);color:var(--accent);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:750;margin-bottom:16px}.small{font-size:12px;color:var(--muted);margin-top:14px}.hidden{display:none!important}.footer{text-align:center;font-size:12px;color:#918a81;margin-top:16px}.confetti{font-size:30px;margin-bottom:10px}@media(max-width:420px){body{padding:12px}.card{border-radius:20px}.nav{flex-direction:column-reverse}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="top"><span class="mark">ARKADAŞLIK TESTİ</span><span>Mini test · ücretsiz</span></div>
+  <section class="card" id="intro">
+    <div class="eyebrow">Ne kadar iyi tanıyorsun?</div>
+    <h1>Ozan'ı ne kadar tanıyorsun?</h1>
+    <p>Bakalım beni gerçekten ne kadar tanıyorsun. Cevaplarını seç, en sonda skorunu gör. 👀</p>
+    <input class="input" id="nickname" maxlength="50" autocomplete="nickname" placeholder="Adın veya rumuzun" aria-label="Adın veya rumuzun">
+    <button class="btn" id="start">Teste başla →</button>
+    <div class="small">Sonucun test sahibine gönderilir.</div>
+  </section>
+  <section class="card hidden" id="quiz">
+    <div class="progress-row"><span id="counter">Soru 1 / 5</span><span id="percent">0%</span></div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="eyebrow">Sıradaki soru</div>
+    <h2 class="question" id="question"></h2>
+    <div class="options" id="options"></div>
+    <div class="nav"><button class="btn secondary" id="back">← Geri</button><button class="btn" id="next">Sonraki →</button></div>
+  </section>
+  <section class="card hidden" id="result">
+    <div class="confetti">🎉</div><div class="eyebrow">Test tamamlandı</div>
+    <h1 id="resultTitle">Sonuçların hazır!</h1>
+    <div class="score" id="score">0%</div>
+    <div class="pill" id="fraction">0 / 5 doğru</div>
+    <p id="comment"></p>
+    <button class="btn" id="again">Tekrar dene</button>
+    <div class="small" id="sendStatus">Sonucun gönderilmesi deneniyor…</div>
+  </section>
+  <div class="footer">Küçük bir arkadaşlık testi ✦</div>
+</main>
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4p4fyunETolY_p4fJtd8e6C3fv2Oz-UiuwlM1OScGLx0BDigKkX5QoLiPFMmLWuT4/exec";
+
+// Şimdilik örnek sorular. Kendi sorularını gönderdiğinde burayı senin cevaplarınla değiştireceğiz.
+// correct: seçeneklerin 0'dan başlayan sırası (ilk seçenek 0, ikinci seçenek 1, vb.)
+const QUESTIONS = [
+  { q: "Ozan'ın en sevdiği renk hangisi?", options: ["Siyah", "Yeşil", "Mavi", "Bordo"], correct: 0 },
+  { q: "Ozan boş zamanında hangisini yapmayı daha çok sever?", options: ["Oyun oynamak", "Kitap okumak", "Yürüyüş yapmak", "Film izlemek"], correct: 3 },
+  { q: "Ozan'ın kahve tercihi hangisi?", options: ["Espresso", "Latte", "Türk kahvesi", "Filtre kahve"], correct: 2 },
+  { q: "Ozan bir tatil için hangisini seçer?", options: ["Deniz kenarı", "Doğa içinde sakin bir yer", "Büyük şehir", "Kayak tatili"], correct: 1 },
+  { q: "Ozan'ın en sevdiği film türü hangisi?", options: ["Bilim kurgu", "Komedi", "Gerilim", "Dram"], correct: 0 }
+];
+
+const $ = id => document.getElementById(id);
+let current = 0, answers = Array(QUESTIONS.length).fill(null), nickname = "";
+const intro = $("intro"), quiz = $("quiz"), result = $("result");
+function show(section){[intro,quiz,result].forEach(s=>s.classList.add("hidden"));section.classList.remove("hidden");}
+function renderQuestion(){
+  const item = QUESTIONS[current];
+  $("counter").textContent = `Soru ${current+1} / ${QUESTIONS.length}`;
+  $("percent").textContent = `${Math.round((current/QUESTIONS.length)*100)}%`;
+  $("fill").style.width = `${(current/QUESTIONS.length)*100}%`;
+  $("question").textContent = item.q;
+  $("options").replaceChildren();
+  item.options.forEach((opt,i)=>{
+    const b=document.createElement("button"); b.type="button";
+    b.className="option"+(answers[current]===i?" selected":"");
+    const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);
+    const label=document.createElement("span");label.textContent=opt;
+    b.append(letter,label);b.onclick=()=>{answers[current]=i;renderQuestion();};
+    $("options").append(b);
+  });
+  $("back").disabled=current===0;$("back").style.opacity=current===0?".45":"1";
+  $("next").textContent=current===QUESTIONS.length-1?"Sonucu gör →":"Sonraki →";
+}
+function start(){nickname=$("nickname").value.trim().slice(0,50);if(!nickname){$("nickname").focus();$("nickname").placeholder="Önce adını veya rumuzunu yaz 🙂";return;}current=0;answers=Array(QUESTIONS.length).fill(null);show(quiz);renderQuestion();}
+$("start").onclick=start;
+$("nickname").addEventListener("keydown",e=>{if(e.key==="Enter")start();});
+$("back").onclick=()=>{if(current>0){current--;renderQuestion();}};
+$("next").onclick=()=>{if(answers[current]===null){alert("Devam etmeden önce bir cevap seç 🙂");return;}if(current<QUESTIONS.length-1){current++;renderQuestion();}else finish();};
+function finish(){
+  const correct=QUESTIONS.reduce((sum,q,i)=>sum+(answers[i]===q.correct?1:0),0);
+  const pct=Math.round(correct/QUESTIONS.length*100);
+  $("resultTitle").textContent=`${nickname}, sonuçların hazır!`;
+  $("score").textContent=`${pct}%`;
+  $("fraction").textContent=`${correct} / ${QUESTIONS.length} doğru`;
+  $("comment").textContent=pct>=80?"Beni bayağı iyi tanıyorsun! 🏆":pct>=50?"Fena değil, ama hâlâ öğreneceklerin var. 😄":"Bunca zamandır arkadaşız… biraz daha çalışman lazım! 😂";
+  $("sendStatus").textContent="Sonucun gönderilmesi deneniyor…";
+  show(result);
+  // Apps Script endpoint'i no-cors ile çağrılır; tarayıcı yanıtı okuyamadığından kayıt kesinliği teyit edilemez.
+  fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({isim:nickname,dogru:correct,toplam:QUESTIONS.length})})
+    .then(()=>{$("sendStatus").textContent="Sonuç gönderme isteği tamamlandı. Kaydı Google Sheets'ten kontrol edebilirsin.";})
+    .catch(()=>{$("sendStatus").textContent="Sonuç gönderilemedi gibi görünüyor. Bağlantıyı kontrol edip tekrar deneyebilirsin.";});
+}
+$("again").onclick=()=>{ $("nickname").value=nickname;start(); };
+</script>
+</body>
+</html>
