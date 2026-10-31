@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#f7f4ef;--card:#fffdf9;--ink:#24221f;--muted:#77716a;--accent:#355c4b;--accent2:#e7eee8;--line:#e8e1d8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;display:grid;place-items:center;padding:22px}
-.app{width:min(100%,560px)}.top{display:flex;align-items:center;justify-content:space-between;margin:0 2px 18px;color:var(--muted);font-size:13px;letter-spacing:.04em}.mark{font-weight:800;color:var(--accent);letter-spacing:.12em}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,6vw,42px);box-shadow:0 18px 55px #3428190b}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}h1{font-size:clamp(30px,7vw,44px);line-height:1.08;letter-spacing:-.045em;margin:0 0 14px}p{line-height:1.6;color:var(--muted);margin:0 0 22px}.input{width:100%;border:1px solid var(--line);border-radius:13px;padding:15px 16px;font:inherit;background:white;margin:0 0 14px;outline:none}.input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #355c4b18}.btn{border:0;border-radius:13px;background:var(--accent);color:white;padding:15px 20px;font:inherit;font-weight:750;cursor:pointer;width:100%;transition:transform .15s,opacity .15s}.btn:hover{opacity:.93}.btn:active{transform:scale(.99)}.progress-row{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}.track{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:28px}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}.question{font-size:clamp(22px,5vw,29px);line-height:1.25;letter-spacing:-.025em;margin:0 0 22px}.options{display:grid;gap:10px;margin-bottom:22px}.option{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:15px;cursor:pointer;font:inherit;color:var(--ink)}.option .letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#f3f0eb;color:#635e57;font-size:13px;font-weight:800}.option.selected{border-color:var(--accent);background:var(--accent2)}.option.selected .letter{background:var(--accent);color:#fff}.option:focus-visible,.btn:focus-visible{outline:3px solid #8fb3a0;outline-offset:3px}.nav{display:flex;gap:10px}.btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}.nav .btn{flex:1}.score{font-size:68px;line-height:1;font-weight:850;letter-spacing:-.06em;color:var(--accent);margin:12px 0}.pill{display:inline-block;background:var(--accent2);color:var(--accent);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:750;margin-bottom:16px}.small{font-size:12px;color:var(--muted);margin-top:14px}.hidden{display:none!important}.footer{text-align:center;font-size:12px;color:#918a81;margin-top:16px}.confetti{font-size:30px;margin-bottom:10px}@media(max-width:420px){body{padding:12px}.card{border-radius:20px}.nav{flex-direction:column-reverse}}
+.app{width:min(100%,560px)}.top{display:flex;align-items:center;justify-content:space-between;margin:0 2px 18px;color:var(--muted);font-size:13px;letter-spacing:.04em}.mark{font-weight:800;color:var(--accent);letter-spacing:.12em}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,6vw,42px);box-shadow:0 18px 55px #3428190b}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}h1{font-size:clamp(30px,7vw,44px);line-height:1.08;letter-spacing:-.045em;margin:0 0 14px}p{line-height:1.6;color:var(--muted);margin:0 0 22px}.input{width:100%;border:1px solid var(--line);border-radius:13px;padding:15px 16px;font:inherit;background:white;margin:0 0 14px;outline:none}.input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #355c4b18}.btn{border:0;border-radius:13px;background:var(--accent);color:white;padding:15px 20px;font:inherit;font-weight:750;cursor:pointer;width:100%;transition:transform .15s,opacity .15s}.btn:hover{opacity:.93}.btn:active{transform:scale(.99)}.progress-row{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}.track{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:28px}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}.question{font-size:clamp(22px,5vw,29px);line-height:1.25;letter-spacing:-.025em;margin:0 0 22px}.options{display:grid;gap:10px;margin-bottom:22px}.option{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:15px;cursor:pointer;font:inherit;color:var(--ink)}.option .letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#f3f0eb;color:#635e57;font-size:13px;font-weight:800}.option.selected{border-color:var(--accent);background:var(--accent2)}.option.selected .letter{background:var(--accent);color:#fff}.option:focus-visible,.btn:focus-visible{outline:3px solid #8fb3a0;outline-offset:3px}.nav{display:flex;gap:10px}.btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}.nav .btn{flex:1}.score{font-size:68px;line-height:1;font-weight:850;letter-spacing:-.06em;color:var(--accent);margin:12px 0}.pill{display:inline-block;background:var(--accent2);color:var(--accent);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:750;margin-bottom:16px}.small{font-size:12px;color:var(--muted);margin-top:14px}.prizes{background:#f5f2ec;border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 20px}.prize-title{font-weight:800;margin-bottom:10px;color:var(--accent)}.prize{font-size:14px;line-height:1.55;margin:7px 0;color:var(--ink)}.prize-note{font-size:12px;color:var(--muted);margin-top:10px}.hidden{display:none!important}.footer{text-align:center;font-size:12px;color:#918a81;margin-top:16px}.confetti{font-size:30px;margin-bottom:10px}@media(max-width:420px){body{padding:12px}.card{border-radius:20px}.nav{flex-direction:column-reverse}}
 </style>
 </head>
 <body>
@@ -17,7 +17,13 @@
   <section class="card" id="intro">
     <div class="eyebrow">Ne kadar iyi tanıyorsun?</div>
     <h1>Ozan'ı ne kadar tanıyorsun?</h1>
-    <p>Bakalım beni gerçekten ne kadar tanıyorsun. Cevaplarını seç, en sonda skorunu gör. 👀</p>
+    <p>Bakalım beni gerçekten ne kadar tanıyorsun. 20 soruluk bu testte hafızana güven. Sonuçta kazananlar ödüllendirilecek, kaybedenler biraz cüzdanını düşünecek. 👀</p>
+    <div class="prizes">
+      <div class="prize-title">🏆 Ödüller</div>
+      <div class="prize"><strong>18+ doğru:</strong> Dilediğiniz bir kokteyl 🍸</div>
+      <div class="prize"><strong>15–17 doğru:</strong> Bir bira 🍺</div>
+      <div class="prize"><strong>10 veya daha az doğru:</strong> Siz bana bira + yemek ısmarlıyorsunuz! 😎</div>
+    </div>
     <input class="input" id="nickname" maxlength="50" autocomplete="nickname" placeholder="Adın veya rumuzun" aria-label="Adın veya rumuzun">
     <button class="btn" id="start">Teste başla →</button>
     <div class="small">Sonucun test sahibine gönderilir.</div>
@@ -44,18 +50,36 @@
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4p4fyunETolY_p4fJtd8e6C3fv2Oz-UiuwlM1OScGLx0BDigKkX5QoLiPFMmLWuT4/exec";
 
-// Şimdilik örnek sorular. Kendi sorularını gönderdiğinde burayı senin cevaplarınla değiştireceğiz.
-// correct: seçeneklerin 0'dan başlayan sırası (ilk seçenek 0, ikinci seçenek 1, vb.)
-const QUESTIONS = [
-  { q: "Ozan'ın en sevdiği renk hangisi?", options: ["Siyah", "Yeşil", "Mavi", "Bordo"], correct: 0 },
-  { q: "Ozan boş zamanında hangisini yapmayı daha çok sever?", options: ["Oyun oynamak", "Kitap okumak", "Yürüyüş yapmak", "Film izlemek"], correct: 3 },
-  { q: "Ozan'ın kahve tercihi hangisi?", options: ["Espresso", "Latte", "Türk kahvesi", "Filtre kahve"], correct: 2 },
-  { q: "Ozan bir tatil için hangisini seçer?", options: ["Deniz kenarı", "Doğa içinde sakin bir yer", "Büyük şehir", "Kayak tatili"], correct: 1 },
-  { q: "Ozan'ın en sevdiği film türü hangisi?", options: ["Bilim kurgu", "Komedi", "Gerilim", "Dram"], correct: 0 }
+// Soruların metinleri ve şıkları Word dosyasındaki hâliyle korunmuştur.
+// correct: doğru seçeneğin 0'dan başlayan sırası.
+const QUESTION_BANK = [
+  { q: "Ozan nerede doğdu?", options: ["İstanbul", "Cenevre", "Ankara", "Zonguldak"], correct: 2 },
+  { q: "Ozan'ın yükselen burcu hangisidir?", options: ["Başak", "Terazi", "İkizler", "Yay"], correct: 0 },
+  { q: "Ozan'ın çocukken en sevdiği çizgi film hangisiydi?", options: ["Voltran", "Tsubasa", "Ninja Kaplumbağalar", "Ay Savaşcısı"], correct: 1 },
+  { q: "Ozan çocukken hangisi olmak istemezdi?", options: ["Astronot", "F1 Pilotu", "Sihirbaz", "Dedektif"], correct: 1 },
+  { q: "Ozan’ın lisede en kötü dersi hangisiydi?", options: ["Biyoloji", "Fizik", "Matematik", "Kimya"], correct: 3 },
+  { q: "Ozan’ın ilk arabası hangi renkti?", options: ["Siyah", "Mavi", "Beyaz", "Gri"], correct: 0 },
+  { q: "Aşağıdakilerden hangisi Ozan’ın kurduğu bir cümle olamaz? (Herkes puan alsın)", options: ["Saat geç oldu ben eve gidiyorum.", "Oraya gitmeyelim ya orda hiç kız yok.", "Kanka orada arabayı nereye park edicez?", "Beyler bugün hesaplar benden!"], correct: 3 },
+  { q: "Ozan’ın diyabetten önceki en sevdiği tatlı hangisidir?", options: ["Fırın Sütlaç", "Profiterol", "Waffle", "Baklava"], correct: 2 },
+  { q: "Ozan’ın en çok tükettiği kahve hangisidir?", options: ["Americano", "Latte", "Filtre Kahve", "Espresso"], correct: 0 },
+  { q: "Ozan’ın en sevdiği film tarzı hangisidir?", options: ["Bilim - Kurgu", "Komedi", "Gerilim", "Sanat Fimleri"], correct: 0 },
+  { q: "Şimdiki Ozan bir tatil için hangisini seçer? (Not: Akla ilk gelen değil)", options: ["Doğa içerisinde kamp", "Şehir merkezi kalabalık bir otel", "Deniz kenarında sakin bir otel", "Ultra her şey dahil bir tatil köyü"], correct: 2 },
+  { q: "Ozan evdeki boş zamanlarının büyük çoğunluğunu nasıl geçirir?", options: ["Kitap yazarak", "Dizi/film izleyerek", "Oyun oynayarak", "Araştırma yaparak"], correct: 1 },
+  { q: "Bu markalardan hangisi Ozan’ın en sevdiği saat markasıdır? (Buğra one point)", options: ["Rolex", "Audemars Piguet", "Jaeger-LeCoultre (JLC)", "Parmigiani Fleurier"], correct: 3 },
+  { q: "Ozan bir konuda karar vermekte zorlanıyorsa ne yapar?", options: ["İlk aklına geleni yapar", "Birkaç kişiye danışıp onların dediğini yapar", "Günlerce araştırır, inceler ama yine de emin olamaz.", "Yazı tura atar."], correct: 2 },
+  { q: "Ozan küçükken aşağıdaki kursların hangisine gitmemiştir ?", options: ["Tiyatro", "Karate", "Satranç", "Piyano"], correct: 3 },
+  { q: "Ozan’ın favori kokteyli aşağıdakilerden hangisidir?", options: ["Long İsland", "Whiskey Sour", "Kuzu Kulağı", "Gin Fizz"], correct: 2 },
+  { q: "Aşağıdakilerden hangisi Ozan’ın araştırmak hoşlandığı alanlardan değildir?", options: ["Sanat Tarihi", "Mitoloji", "Astrofizik", "Sosyoloji"], correct: 3 },
+  { q: "Ozan bir buluşmaya/randevuya/görüşmeye giderken zamanlaması nasıldır?", options: ["Mutlaka biraz geç gider", "Erken gider oralarda oyalanır", "Tam zamanında gider", "Zaman göreceli bir şeydir"], correct: 2 },
+  { q: "Ozan’a bir yerden miras kalsa parasını ilk nereye harcar?", options: ["Sivil toplum kuruluşlarına bağış yapar", "En pahalı otellerde oda tutup kızlarla yer", "Afrika’ya hayrat yaptırır", "Yapay zeka alanındaki start-up’lara yatırım yapar"], correct: 1 },
+  { q: "Ozan’ın hayalindeki eşinin mesleği nedir?", options: ["BBC News’ da bir haber spikeri", "Nobel ödüllü bir bilim kadını", "Michelin yıldızlı bir aşçı", "Olimpiyat madalyalı bir sporcu"], correct: 0 }
 ];
 
+// Her yeni test başlangıcında soru sırası karıştırılır; şıkların sırası değişmez.
+let QUESTIONS = [];
+
 const $ = id => document.getElementById(id);
-let current = 0, answers = Array(QUESTIONS.length).fill(null), nickname = "";
+let current = 0, answers = [], nickname = "";
 const intro = $("intro"), quiz = $("quiz"), result = $("result");
 function show(section){[intro,quiz,result].forEach(s=>s.classList.add("hidden"));section.classList.remove("hidden");}
 function renderQuestion(){
@@ -76,7 +100,7 @@ function renderQuestion(){
   $("back").disabled=current===0;$("back").style.opacity=current===0?".45":"1";
   $("next").textContent=current===QUESTIONS.length-1?"Sonucu gör →":"Sonraki →";
 }
-function start(){nickname=$("nickname").value.trim().slice(0,50);if(!nickname){$("nickname").focus();$("nickname").placeholder="Önce adını veya rumuzunu yaz 🙂";return;}current=0;answers=Array(QUESTIONS.length).fill(null);show(quiz);renderQuestion();}
+function start(){nickname=$("nickname").value.trim().slice(0,50);if(!nickname){$("nickname").focus();$("nickname").placeholder="Önce adını veya rumuzunu yaz 🙂";return;}QUESTIONS=QUESTION_BANK.slice();for(let i=QUESTIONS.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[QUESTIONS[i],QUESTIONS[j]]=[QUESTIONS[j],QUESTIONS[i]];}current=0;answers=Array(QUESTIONS.length).fill(null);show(quiz);renderQuestion();}
 $("start").onclick=start;
 $("nickname").addEventListener("keydown",e=>{if(e.key==="Enter")start();});
 $("back").onclick=()=>{if(current>0){current--;renderQuestion();}};
@@ -87,7 +111,9 @@ function finish(){
   $("resultTitle").textContent=`${nickname}, sonuçların hazır!`;
   $("score").textContent=`${pct}%`;
   $("fraction").textContent=`${correct} / ${QUESTIONS.length} doğru`;
-  $("comment").textContent=pct>=80?"Beni bayağı iyi tanıyorsun! 🏆":pct>=50?"Fena değil, ama hâlâ öğreneceklerin var. 😄":"Bunca zamandır arkadaşız… biraz daha çalışman lazım! 😂";
+  const reward = correct>=18 ? "Ödülün: Dilediğin bir kokteyl! 🍸" : correct>=15 ? "Ödülün: Bir bira! 🍺" : correct<=10 ? "Eyvah! Bana bira + yemek ısmarlıyorsun! 😎" : "";
+  const reaction = correct>=18 ? "Beni bayağı iyi tanıyorsun! 🏆" : correct>=15 ? "Gayet iyi, az daha çalışsan kokteyl de senindi!" : correct<=10 ? "Bunca zamandır arkadaşız… biraz daha çalışman lazımdı! 😂" : "Fena değil! 😄";
+  $("comment").textContent=`${reaction} ${reward}`;
   $("sendStatus").textContent="Sonucun gönderilmesi deneniyor…";
   show(result);
   // Apps Script endpoint'i no-cors ile çağrılır; tarayıcı yanıtı okuyamadığından kayıt kesinliği teyit edilemez.
